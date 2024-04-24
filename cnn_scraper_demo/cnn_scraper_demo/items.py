@@ -19,3 +19,10 @@ class NytArticleItem(scrapy.Item):
     description = scrapy.Field()
     pub_date = scrapy.Field()
     parse_time = scrapy.Field()
+    
+class CnnRssArticleItem(scrapy.Item):
+    title = scrapy.Field()
+    link = scrapy.Field()
+    description = scrapy.Field()
+    pub_date = scrapy.Field()    
+    parse_time = scrapy.Field()
