@@ -15,7 +15,7 @@ import pandas as pd
 import numpy as np
 
 start_date = datetime.datetime.strptime("01-01-2018", "%d-%m-%Y")  # start date query
-end_date = datetime.datetime.strptime("01-01-2019", "%d-%m-%Y")  # end date query
+end_date = datetime.datetime.strptime("01-02-2018", "%d-%m-%Y")  # end date query
 
 date_range = pd.date_range(start_date, end_date)  # Create date range
 
@@ -58,8 +58,6 @@ for i, url in enumerate(urls):
         browser.get(url)
         scroll_page()
         collect(date_range[i].strftime('%Y-%m-%d'))
-        if i % 10 == 0:
-            break
         print(f"{i+1} out of {len(urls)}", end="\r")
     except Exception as e:
         print(f"Error processing URL {i+1}: {e}")
@@ -67,6 +65,6 @@ for i, url in enumerate(urls):
 # Close the browser after processing all URLs
 browser.quit()
 
-links.to_csv("nyt_urls_2018.csv", index=False)
+links.to_csv("SeleniumNYtimeResults.csv", index=False)
 print("End Time:", datetime.datetime.now())
 os.system("echo 'I am done collecting urls'")

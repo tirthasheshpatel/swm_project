@@ -119,6 +119,6 @@ try:
         lambda x: x.encode('unicode-escape').decode('utf-8'))
     twitter_df['Tweet'] = twitter_df['Tweet'].map(
         lambda x: x.encode('unicode-escape').decode('utf-8'))
-    twitter_df.to_csv('CNN_tweets.csv', index=False)  # Rename the file here
+    twitter_df.to_csv('SeleniumXResults.csv', index=False)  # Rename the file here
 except Exception as e:
     print(e)
